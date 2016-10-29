@@ -1,4 +1,13 @@
-<h1><%= title %></h1>
-<form action="/create" method="post" accept-charset="utf-8">
-  <input type="text" name="content" />
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+    <form action="/create" method="post" accept-charset="utf-8">
+      <input type="text" name="content" />
+    </form>
+  </body>
+</html>
