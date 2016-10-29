@@ -1,0 +1,11 @@
+<% layout( 'layout' ) -%>
+
+<h1><%= title %></h1>
+<form action="/update/<%= todo._id %>" method="post" accept-charset="utf-8">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="content" value="<%= todo.content %>" />
+  <input type="submit" value="Edit that stuff">
+</form>
+<span>
+  <a href="/destroy/<%= todo._id %>" title="Delete this todo item">Delete</a>
+</span>
