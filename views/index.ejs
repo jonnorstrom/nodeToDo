@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <% include partials/head %>
-  </head>
+<% layout( 'layout' ) -%>
 
-  <body>
-    <h1><%= title %></h1>
-    <form action="/create" method="post" accept-charset="utf-8">
-      <input type="text" name="content" />
+<h1><%= title %></h1>
+<form action="/create" method="post" accept-charset="utf-8">
+  <input type="text" name="content" />
+</form>
+<% todos.forEach( function( todo ){ %>
+  <p>
+    <form action="/destroy/<%=todo.id%>" method="post">
+      <a href="/edit/<%=todo.id%>"><span><%= todo.content %></span></a>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete this">
     </form>
-  </body>
-</html>
+  </p>
+<% }); %>
